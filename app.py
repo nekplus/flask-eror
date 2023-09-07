@@ -11,12 +11,15 @@ class Ftodo(db.Model):
     content = db.Column(db.Text, unique=True, nullable=False)
     date = db.Column(db.DateTime, default=datetime.now)
 
+
     def __repr__(self):
         return f"Ftodo({self.content} - {self.date})"
+
 
 @app.route("/")
 def home():
     return render_template("home.html", name="mohsen")
+
 
 @app.route("/about")
 def about():
